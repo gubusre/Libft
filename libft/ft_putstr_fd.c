@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 20:16:36 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/09 23:06:18 by gubusque         ###   ########.fr       */
+/*   Created: 2025/04/07 21:31:46 by gubusque          #+#    #+#             */
+/*   Updated: 2025/04/09 19:25:37 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_putstr_fd(char *str, int fd)
 {
-	unsigned char	*tmp_ptr;
+	int	i;
 
-	tmp_ptr = (unsigned char *) b;
-	while (len-- > 0)
-		*(tmp_ptr++) = (unsigned char) c;
-	return (b);
+	i = 0;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
 }
-/*DESCRIPTION
-       The  memset() function fills the first n bytes 
-       of the memory area pointed to by s with the
-       constant byte c.
-
-RETURN VALUE
-       The memset() function returns a pointer to the memory area s.
-
-*/
+/*
+ * Desc
+ * 	Write str in the specified fd.
+ */

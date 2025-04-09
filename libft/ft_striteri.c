@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 20:16:36 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/09 23:06:18 by gubusque         ###   ########.fr       */
+/*   Created: 2025/04/09 19:23:46 by gubusque          #+#    #+#             */
+/*   Updated: 2025/04/09 19:24:50 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*tmp_ptr;
+	unsigned int	i;
 
-	tmp_ptr = (unsigned char *) b;
-	while (len-- > 0)
-		*(tmp_ptr++) = (unsigned char) c;
-	return (b);
+	i = 0;
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
-/*DESCRIPTION
-       The  memset() function fills the first n bytes 
-       of the memory area pointed to by s with the
-       constant byte c.
-
-RETURN VALUE
-       The memset() function returns a pointer to the memory area s.
-
-*/
+/*
+ * Desc
+ * 	Aplly f to every byte of the string s.
+ */
