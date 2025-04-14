@@ -6,7 +6,7 @@
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:39:33 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/10 00:08:28 by gubusque         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:43:38 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static size_t	int_len(long nbr)
 	return (count);
 }
 
-char	*w_str(char *n_str, long nbr, size_t len)
+static char	*w_str(char *n_str, long nbr, size_t len)
 {
 	size_t	i;
 
@@ -82,8 +82,17 @@ char	*ft_itoa(int n)
 	n_str = w_str(n_str, nbr, len);
 	return (n_str);
 }
+/*
+#include <stdio.h>
+
+int	main()
+{
+	printf("%s\n", ft_itoa(NULL));
+	return (0);
+}
+*/
 /* Desc
  *	int to ascii 
  * Return
  * 	string of n 
- */	
+ */

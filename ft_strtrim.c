@@ -6,7 +6,7 @@
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:59:17 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/09 23:16:11 by gubusque         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:19:38 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int	i;
 	int	j;
 
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return ((char *)s1);
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	if (ft_strlen(s1) == 0)

@@ -6,7 +6,7 @@
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:51:36 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/09 23:13:59 by gubusque         ###   ########.fr       */
+/*   Updated: 2025/04/14 21:26:41 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,25 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (spliter(result, s, c, w_count));
 }
+/*
+#include <stdio.h>
+
+int	main(int argc, const char *argv[])
+{
+	char	**tmp;
+	int	i;
+
+	if (argc != 2)
+		return (0);
+	tmp = ft_split(argv[1], ' ');
+	i = 0;
+	*tmp[3] = NULL;
+	while (tmp[i])
+	{
+		printf("%s\n", tmp[i]);
+		free(tmp[i]);
+		i++;
+	}
+	return (0);
+}
+*/

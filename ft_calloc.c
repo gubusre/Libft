@@ -6,7 +6,7 @@
 /*   By: gubusque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:33:48 by gubusque          #+#    #+#             */
-/*   Updated: 2025/04/09 19:48:57 by gubusque         ###   ########.fr       */
+/*   Updated: 2025/04/12 22:14:30 by gubusque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	tmp = malloc(count * size);
 	if (!tmp)
 		return (NULL);
-	while (i < count * size)
-		tmp[i++] = 0;
+	ft_bzero(tmp, count * size);
 	return (tmp);
 }
 /* Desc
